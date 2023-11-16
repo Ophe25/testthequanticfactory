@@ -10,7 +10,7 @@ function Fontaines() {
     const [isMounted, setIsMounted] = useState(false);
     const [fontaines, setFontaines] = useState([]);
 
-    console.log('fontaines', fontaines)
+    // console.log('fontaines', fontaines)
 
     useEffect(() => {
         api.getFontainesExport().then((fontaines) => {
@@ -30,12 +30,14 @@ function Fontaines() {
 
     useEffect(() => {
         api.getFontaines(currentFiltres).then((fontaines) => {
+            console.log('fontaines2', fontaines)
+
             setFontaines(fontaines);
         })
     }, [currentFiltres]);
 
     function _filtreFontaine(name, value) {
-        console.log('filtres', currentFiltres)
+        // console.log('filtres', currentFiltres)
 
         const index = currentFiltres.findIndex((filtre) => filtre.value === value)
 
@@ -51,7 +53,7 @@ function Fontaines() {
     }
 
 
-    console.log('fontaines1', fontaines)
+    // console.log('fontaines1', fontaines)
 
     return (
         <div>
@@ -75,40 +77,59 @@ function Fontaines() {
                     }}
                 />
                 <div style={{ textAlign: 'end', alignSelf: 'center', paddingRight: 30 }}>
-                    <p style={{ margin: 0, fontSize: 28, color: 'white' }}>Fontaines à boire</p>
+                    <h1 style={{ margin: 0, color: 'white' }}>Fontaines à boire</h1>
                     <p style={{ margin: 0, fontSize: 25, fontFamily: 'nexaLight', color: 'white' }}>{fontaines.total_count + ' fontaines trouvées'}</p>
                 </div>
             </div>
-            {/* <p>Commune</p>
-            {filtres.map(filtre => <p onClick={() => {
-                _filtreFontaine('refine', 'commune:"' + filtre + '"')
-            }}>{filtre}</p>)} */}
 
-            <Table
-                style={{
-                    backgroundColor: 'rgba(95, 37, 159, 0.35)',
-                    margin: 40,
-                    width: '95%',
-                    borderRadius: 15,
-                    padding: 10,
-                    textAlign: 'center',
-                }}
-            >
-                <thead>
-                    <tr>
-                        <th>Adresse</th>
-                        <th>Commune</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {fontaines.results.map((fontaine) =>
-                        <tr>
-                            <td>{((fontaine.no_voirie_pair === null ? fontaine.no_voirie_impair : fontaine.no_voirie_pair) || (fontaine.no_voirie_pair === null && fontaine.no_voirie_impair === null ? '' : <></>)) + ' ' + fontaine.voie}</td>
-                            <td>{fontaine.commune}</td>
+            <div style={{ display: 'flex', flexDirection: 'row', overflow: 'scroll' }}>
+                <div
+                    style={{
+                        backgroundColor: 'rgba(95, 37, 159, 0.70)',
+                        width: 'fit-content',
+                        padding: 10,
+                        margin: 20,
+                        borderRadius: 20,
+                        flex: 1
+                    }}>
+                    <h3 style={{ margin: 0, color: 'white', textAlign: 'center' }}>Filtres</h3>
+                    <p style={{ color: 'white' }}>Commune :</p>
+                    {filtres.map(filtre =>
+                        <p style={{ marginLeft: 10, cursor: 'pointer', color: 'white' }} onClick={() => {
+                            _filtreFontaine('refine', 'commune:"' + filtre + '"')
+                        }}>{filtre.toLowerCase()}</p>)}
+                </div>
+                <Table
+                    style={{
+                        margin: '20px 30px 20px 10px',
+                        flex: 6,
+                        borderRadius: 20,
+                        textAlign: 'center',
+                        borderCollapse: 'collapse',
+
+                    }}
+                >
+                    <thead style={{ borderTopLeftRadius: 20, borderTopRightRadius: 20 }}>
+                        <tr style={{
+                            backgroundColor: 'rgba(95, 37, 159, 0.35)', borderTopLeftRadius: 20, borderTopRightRadius: 20
+                        }}>
+                            <th style={{ borderTopLeftRadius: 20 }}>Adresse</th>
+                            <th style={{ borderTopRightRadius: 20 }}>Commune</th>
                         </tr>
-                    )}
-                </tbody>
-            </Table>
+                    </thead>
+                    <tbody>
+                        {fontaines?.results?.map((fontaine, i) =>
+                            <tr style={{
+                                backgroundColor: i % 2 ? 'rgba(95, 37, 159, 0.35)' : 'rgba(95, 37, 159, 0.15)',
+                                height: 'fit-content'
+                            }}>
+                                <td style={{ border: 0, height: 'fit-content' }}>{((fontaine.no_voirie_pair === null ? fontaine.no_voirie_impair : fontaine.no_voirie_pair) || (fontaine.no_voirie_pair === null && fontaine.no_voirie_impair === null ? '' : <></>)) + ' ' + fontaine.voie.toLowerCase()}</td>
+                                <td style={{ height: 'fit-content' }}>{fontaine.commune.toLowerCase()}</td>
+                            </tr>
+                        )}
+                    </tbody>
+                </Table>
+            </div>
         </div>
     );
 }

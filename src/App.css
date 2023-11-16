@@ -2,7 +2,6 @@
   text-align: center;
 }
 
-p,
 th,
 h2 {
   font-family: 'NexaHeavy';
@@ -14,7 +13,8 @@ th {
   padding-bottom: 10px;
 }
 
-tr {
+tr,
+p {
   font-family: 'NexaLight';
 
 }
