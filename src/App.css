@@ -2,6 +2,23 @@
   text-align: center;
 }
 
+p,
+th,
+h2 {
+  font-family: 'NexaHeavy';
+}
+
+td,
+th {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+tr {
+  font-family: 'NexaLight';
+
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
