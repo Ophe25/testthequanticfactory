@@ -32,7 +32,22 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
+}
+
+@font-face {
+  font-family: "NexaLight";
+  /*Can be any text*/
+  src: local("Nexa-ExtraLight"),
+    url("./assets/fonts/Nexa-ExtraLight.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "NexaHeavy";
+  /*Can be any text*/
+  src: local("Nexa-Heavy"),
+    url("./assets/fonts/Nexa-Heavy.ttf") format("truetype");
 }

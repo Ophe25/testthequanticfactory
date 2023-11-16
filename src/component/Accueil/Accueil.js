@@ -1,5 +1,6 @@
 import api from '../../API/api';
-import Fontaines from '../Fontaines/Fontaines';
+// import Fontaines from '../Fontaines/Fontaines';
+import Dataset from './Dataset';
 
 
 function Accueil() {
@@ -8,7 +9,7 @@ function Accueil() {
         {
             image: require('../../assets/image/Fontaines.png'),
             nom: 'Fontaines',
-            navigation: <Fontaines />,
+            // navigation: <Fontaines />,
         },
         {
             image: require('../../assets/image/Activites.png'),
@@ -28,8 +29,8 @@ function Accueil() {
 
     return (
         <div>
-            <h3>Que recherchez-vous ?</h3>
-            <div style={{ display: 'flex', flexDirection: 'row' }}>
+            <h1 style={{ textAlign: 'center', color: '#5f259f', fontFamily: 'NexaHeavy' }}>Que recherchez-vous ?</h1>
+            <div style={{ display: 'flex', flexDirection: 'row', flex: 1 }}>
                 {type.map(function (dataset, i) {
                     return (
                         <div
@@ -40,10 +41,21 @@ function Accueil() {
                                 backgroundPosition: 'center',
                                 flex: 1,
                                 height: '80vh',
+                                alignSelf: 'center',
+                                display: 'flex',
+                                justifyContent: 'center',
 
                             }}>
-                            <div style={{ backgroundColor: 'rgba(255, 255, 255, 0.5)', width: 'fit-content', padding: 5, borderRadius: 20 }}>
-                                <p onClick={{}}>{dataset.nom}</p>
+                            <div
+                                style={{
+                                    backgroundColor: 'rgba(255, 255, 255, 0.5)',
+                                    width: 'fit-content',
+                                    padding: 20,
+                                    borderRadius: 20,
+                                    justifyContent: 'center',
+                                    alignSelf: 'center'
+                                }}>
+                                <p style={{ margin: 0, fontFamily: 'NexaHeavy' }}>{dataset.nom}</p>
                             </div>
 
                         </div>
