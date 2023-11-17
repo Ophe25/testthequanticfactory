@@ -10,10 +10,10 @@ import "./assets/fonts/Nexa-ExtraLight.ttf"
 function App() {
   return (
     // <Accueil />
-    <Fontaines />
+    // <Fontaines />
     // <Activites />
     // <EspacesVerts />
-    // <Navigation />
+    <Navigation />
 
   );
 }

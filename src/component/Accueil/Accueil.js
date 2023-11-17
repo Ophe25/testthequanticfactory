@@ -1,25 +1,27 @@
 import api from '../../API/api';
-// import Fontaines from '../Fontaines/Fontaines';
+import Fontaines from '../Fontaines/Fontaines';
+import Activites from '../Activites/Activites';
+import EspacesVerts from '../EspacesVerts/EspacesVerts';
 import Dataset from './Dataset';
 
 
-function Accueil() {
+function Accueil({navigation}) {
 
     var type = [
         {
             image: require('../../assets/image/Fontaines.png'),
             nom: 'Fontaines',
-            // navigation: <Fontaines />,
+            navigation: 'Fontaines',
         },
         {
             image: require('../../assets/image/Activites.png'),
             nom: 'Équipements et activités',
-            navigation: 'fdsfv',
+            navigation: 'Activites',
         },
         {
             image: require('../../assets/image/Espaces.png'),
             nom: 'Espaces verts',
-            navigation: '',
+            navigation: 'EspacesVerts',
         }
     ]
 
@@ -45,7 +47,9 @@ function Accueil() {
                                 display: 'flex',
                                 justifyContent: 'center',
 
-                            }}>
+                            }}
+                            onClick={() => navigation.navigate(dataset.navigation)}
+                            >
                             <div
                                 style={{
                                     backgroundColor: 'rgba(255, 255, 255, 0.5)',

@@ -2,15 +2,13 @@
   text-align: center;
 }
 
-th,
 h2 {
   font-family: 'NexaHeavy';
 }
 
 td,
 th {
-  padding-top: 10px;
-  padding-bottom: 10px;
+  padding: 10px 20px 10px 20px;
 }
 
 tr,
