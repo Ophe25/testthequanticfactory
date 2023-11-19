@@ -42,7 +42,7 @@ function api() {
     const getActivites = (filtres) => {
         var url = activitesEndpoint
         if (Array.isArray(filtres)) {
-            url += '?'
+            url += '&'
             filtres.forEach((filtre, index) => {
                 url += filtre.name + '=' + filtre.value
                 if (index !== (filtres.length - 1)) {
@@ -68,7 +68,7 @@ function api() {
     const getEspaces = (filtres) => {
         var url = espacesEndpoint
         if (Array.isArray(filtres)) {
-            url += '?'
+            url += '&'
             filtres.forEach((filtre, index) => {
                 url += filtre.name + '=' + filtre.value
                 if (index !== (filtres.length - 1)) {

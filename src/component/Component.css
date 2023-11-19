@@ -1,0 +1,85 @@
+/* Pages fontaines & Activités & Espaces verts */
+
+.tableau-datasets {
+    flex: 1
+}
+
+.tableau-datasets Table {
+    margin: 20px 30px 20px 10px;
+    text-align: center;
+    border-collapse: collapse;
+    width: 98%
+}
+
+.table-header {
+    background-color: rgba(95, 37, 159, 0.35)
+}
+
+.pagination {
+    margin-bottom: 20px
+}
+
+.progress {
+    color: #5f259f;
+    background-color: #fff !important;
+}
+
+.body {
+    display: flex;
+    flex-direction: row
+}
+
+.filtres {
+    background-color: rgba(95, 37, 159, 0.70);
+    padding: 10px;
+    margin: 20px;
+    border-radius: 20px;
+    flex: 1;
+    height: min-content;
+    max-width: 290px;
+}
+
+.filtres p {
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+.filtres h3 {
+    text-align: center
+}
+
+/* Header */
+
+.header {
+    background-color: #5f259f;
+    height: 30vh;
+    display: flex;
+    flex-direction: row;
+}
+
+.retour {
+    color: white;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+.image {
+    align-self: center;
+    margin-left: 10px;
+    flex: 1
+}
+
+.image img {
+    border-radius: 17px
+}
+
+.texte {
+    text-align: end;
+    align-self: center;
+    padding-right: 30px
+}
+
+.texte p {
+    font-size: 25px;
+    font-family: 'nexaLight'
+}

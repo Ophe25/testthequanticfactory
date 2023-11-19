@@ -2,6 +2,22 @@
   text-align: center;
 }
 
+.Retour {
+  color: 'white' !important;
+  margin-left: 10px;
+  cursor: 'pointer';
+}
+
+.Tableau {
+  margin: '20px 30px 20px 10px';
+  border-radius: 20;
+  text-align: 'center';
+  border-collapse: 'collapse';
+  flex: 1;
+
+  width: '98%';
+}
+
 h2 {
   font-family: 'NexaHeavy';
 }
@@ -9,12 +25,20 @@ h2 {
 td,
 th {
   padding: 10px 20px 10px 20px;
+  color: black;
 }
 
 tr,
 p {
   font-family: 'NexaLight';
 
+}
+
+p,
+h1,
+h3,
+h4 {
+  color: white;
 }
 
 .App-logo {

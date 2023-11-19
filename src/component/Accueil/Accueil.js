@@ -1,11 +1,7 @@
-import api from '../../API/api';
-import Fontaines from '../Fontaines/Fontaines';
-import Activites from '../Activites/Activites';
-import EspacesVerts from '../EspacesVerts/EspacesVerts';
+import './Accueil.css'
 import Dataset from './Dataset';
 
-
-function Accueil({navigation}) {
+function Accueil({ navigation }) {
 
     var type = [
         {
@@ -25,44 +21,15 @@ function Accueil({navigation}) {
         }
     ]
 
-    // api.getFontaines('refine=dispo:NON').then((json) => {
-    //     console.log('test', json)
-    // })
-
     return (
         <div>
-            <h1 style={{ textAlign: 'center', color: '#5f259f', fontFamily: 'NexaHeavy' }}>Que recherchez-vous ?</h1>
-            <div style={{ display: 'flex', flexDirection: 'row', flex: 1 }}>
+            <h1 className='titre'>
+                Que recherchez-vous ?
+            </h1>
+            <div className='datasets'>
                 {type.map(function (dataset, i) {
                     return (
-                        <div
-                            key={i}
-                            style={{
-                                backgroundImage: "url(" + dataset.image + ")",
-                                backgroundRepeat: ' no-repeat',
-                                backgroundPosition: 'center',
-                                flex: 1,
-                                height: '80vh',
-                                alignSelf: 'center',
-                                display: 'flex',
-                                justifyContent: 'center',
-
-                            }}
-                            onClick={() => navigation.navigate(dataset.navigation)}
-                            >
-                            <div
-                                style={{
-                                    backgroundColor: 'rgba(255, 255, 255, 0.5)',
-                                    width: 'fit-content',
-                                    padding: 20,
-                                    borderRadius: 20,
-                                    justifyContent: 'center',
-                                    alignSelf: 'center'
-                                }}>
-                                <p style={{ margin: 0, fontFamily: 'NexaHeavy' }}>{dataset.nom}</p>
-                            </div>
-
-                        </div>
+                        <Dataset navigation={() => navigation.navigate(dataset.navigation)} nom={dataset.nom} image={dataset.image} i={i} />
                     )
                 }
                 )}

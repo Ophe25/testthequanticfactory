@@ -1,36 +1,20 @@
-var type = [
-    {
-        image: require('../../assets/image/Fontaines.png'),
-        nom: 'Fontaines',
-        // navigation: <Fontaines />,
-    },
-    {
-        image: require('../../assets/image/Activites.png'),
-        nom: 'Équipements et activités',
-        navigation: 'fdsfv',
-    },
-    {
-        image: require('../../assets/image/Espaces.png'),
-        nom: 'Espaces verts',
-        navigation: '',
-    }
-]
+import './Accueil.css'
 
-function Dataset() {
+function Dataset(props) {
 
     return (
         <div
-            // key={i}
+            key={props.i}
+            className='dataset'
             style={{
-                backgroundImage: "url(" + type.image + ")",
-                backgroundRepeat: ' no-repeat',
-                backgroundPosition: 'center',
-                flex: 1,
-                height: '80vh',
-
-            }}>
-            <div style={{ backgroundColor: 'rgba(255, 255, 255, 0.5)', width: 'fit-content', padding: 5, borderRadius: 20 }}>
-                <p onClick={{}}>{type.nom}</p>
+                backgroundImage: "url(" + props.image + ")",
+            }}
+            onClick={props.navigation}
+        >
+            <div>
+                <p>
+                    {props.nom}
+                </p>
             </div>
 
         </div>

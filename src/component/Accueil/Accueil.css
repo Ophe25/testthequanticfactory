@@ -1,4 +1,38 @@
-h2 {
-    color: '#5f259f';
-    text-align: 'center';
+/* Page Accueil */
+
+.titre {
+    text-align: center;
+    color: #5f259f;
+    font-family: 'NexaHeavy';
+}
+
+.datasets {
+    display: flex;
+    flex-direction: row;
+    flex: 1
+}
+
+/* Page Dataset */
+
+.dataset p {
+    margin: 0;
+    font-family: 'NexaHeavy';
+    color: #5f259f;
+}
+
+.dataset {
+    background-repeat: no-repeat;
+    background-position: center;
+    flex: 1;
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.dataset div {
+    background: rgba(255, 255, 255, 0.5);
+    padding: 15px;
+    border-radius: 20px;
+    align-self: center
 }
